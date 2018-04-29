@@ -32,6 +32,8 @@ persist-key
 persist-tun
 push "dhcp-option DNS 8.8.8.8"
 push "dhcp-option DNS 8.8.4.4"
+sndbuf 0
+rcvbuf 0
 
 proto tcp-server
 port 443
@@ -52,6 +54,10 @@ persist-key
 persist-tun
 push "dhcp-option DNS 8.8.8.8"
 push "dhcp-option DNS 8.8.4.4"
+sndbuf 393216
+rcvbuf 393216
+push "sndbuf 393216"
+push "rcvbuf 393216"
 
 proto udp
 port 1194
@@ -71,6 +77,8 @@ client
 nobind
 dev tun
 redirect-gateway def1
+sndbuf 0
+rcvbuf 0
 
 <key>
 `cat key.pem`
